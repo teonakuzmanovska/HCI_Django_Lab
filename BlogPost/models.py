@@ -6,6 +6,12 @@ from django.db import models
 
 class UserModel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50, null=True, blank=True)
+    surname = models.CharField(max_length=50, null=True, blank=True)
+    image = models.ImageField(upload_to="images/", null=True, blank=True)
+    interests = models.TextField(null=True, blank=True)
+    skills = models.TextField(null=True, blank=True)
+    occupation = models.CharField(max_length=50, null=True, blank=True)
 
 
 class Publication(models.Model):

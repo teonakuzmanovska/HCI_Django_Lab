@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blocked Users</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+</head>
+<body>
+<nav class="row justify-content-center small navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid col-8">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Home</a>
+        </div>
+        <ul class="nav navbar-nav d-flex">
+            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Publications</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Publish post</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Blocked users</a></li>
+        </ul>
+    </div>
+</nav>
+<h1 class="row justify-content-center my-4">Blocked users</h1>
+<hr class="row justify-content-center my-4">
+<div class="row justify-content-center my-4">
+    <div class="col-6">
+        <ul class="list-group">
+            {% for blocked_user in blocked_users %}
+                <li class="list-group-item">{{ blocked_user.blocked_user }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<h2 class="row justify-content-center my-4">Block a user</h2>
+<div class="row justify-content-center my-4">
+    <div class="col-6">
+    <form method="post">
+        {% csrf_token %} {# za validacija, poradi zashtita od zlonamerni korisnici #}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</div>
+</div>
+
+</body>
+</html>
