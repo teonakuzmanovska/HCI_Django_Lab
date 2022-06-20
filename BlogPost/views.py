@@ -15,7 +15,9 @@ def profile(request):
 
 
 def publication(request):
-    queryset = Publication.objects.filter(user=request.user).exclude().all()
+    queryset = Publication.objects.filter(~Q(user=request.user)).all()
+    # queryset = Publication.objects.filter(user=request.user).exclude().all()
+    # queryset = Publication.objects.filter(user__publication=request.user).exclude().all()
     context = {"publications": queryset}
     return render(request, "publications.html", context=context)
 

@@ -22,7 +22,7 @@ from BlogPost.views import profile, publication, blocked_users, add_publications
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('profile/', profile, name="profiles"),
+    path('profile/', profile, name="profile"),
     path('publications/', publication, name="publications"),
     path('blocked_users/', blocked_users, name="blocked_users"),
     path('add_publications/', add_publications, name="add_publications")
