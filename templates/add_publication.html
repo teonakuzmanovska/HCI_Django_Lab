@@ -18,10 +18,10 @@
             <a class="navbar-brand" href="#">Home</a>
         </div>
         <ul class="nav navbar-nav d-flex">
-            <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Publications</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Publish post</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Blocked users</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url "profile" %}">Profile</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url "publications" %}">Publications</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url "add_publications" %}">Publish post</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url "blocked_users" %}">Blocked users</a></li>
         </ul>
     </div>
 </nav>
